@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Moden Mixes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: gold;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            height: 100px;
+        }
+        nav {
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .form-container {
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+        }
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: gold;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Moden Mixes Logo">
+    <h1>Contact Moden Mixes</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="form-container">
+    <form action="https://formspree.io/f/mnqeknaw" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message or Event Request" rows="6" required></textarea>
+        <button type="submit">Send Request</button>
+    </form>
+</div>
+
+</body>
+</html>
