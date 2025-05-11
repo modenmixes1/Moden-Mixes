@@ -1,0 +1,186 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #191919 0%, #232323 100%);
+  color: #ffd700;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  padding: 36px 16px 16px 16px;
+  background: rgba(0,0,0,0.72);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid #ffd700;
+  background: #000;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffd700;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #fff;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+section {
+  max-width: 600px;
+  margin: 32px auto;
+  background: rgba(0,0,0,0.82);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  padding: 32px 20px;
+}
+
+section h2 {
+  color: #ffd700;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.intro ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 18px 0;
+}
+
+.intro ul li {
+  background: linear-gradient(90deg, #ffd70033 60%, #bfa10022 100%);
+  color: #fff;
+  margin: 6px 0;
+  padding: 7px 16px;
+  border-radius: 12px;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.why-us .features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.why-us .feature {
+  flex: 1 1 120px;
+  min-width: 120px;
+  background: #222;
+  border-radius: 12px;
+  padding: 18px 10px;
+  margin: 6px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.07);
+}
+
+.why-us .icon {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700 60%, #bfa100 100%);
+  color: #232323;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 18px;
+  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.18);
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(90deg, #bfa100 60%, #ffd700 100%);
+  color: #111;
+}
+
+footer {
+  margin-top: 32px;
+  padding: 28px 0 12px 0;
+  background: #181818;
+  border-top: 1px solid #ffd70022;
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  color: #ffd700;
+}
+
+.contact-info a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.insta-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  filter: invert(87%) sepia(74%) saturate(749%) hue-rotate(1deg) brightness(104%) contrast(101%);
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  section {
+    padding: 20px 6px;
+  }
+  .why-us .features {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .logo {
+    width: 85px;
+    height: 85px;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+}
