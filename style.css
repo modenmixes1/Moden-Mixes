@@ -20,14 +20,25 @@ body {
   position: relative;
   z-index: 1;
 }
-
 .background {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% 20%, #232323 0%, #181818 100%);
   z-index: -1;
-  filter: blur(1.5px);
+  /* Gold gradient overlay */
+  background:
+    linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(24,24,24,0.95) 100%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(212,175,55,0.10),
+      rgba(212,175,55,0.10) 2px,
+      transparent 2px,
+      transparent 24px
+    ),
+    radial-gradient(circle at 50% 20%, #232323 0%, #181818 100%);
+  background-blend-mode: overlay;
+  filter: blur(0.5px);
 }
+
 
 .hero {
   text-align: center;
