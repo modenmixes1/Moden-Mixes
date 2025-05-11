@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: radial-gradient(ellipse at center, #222 0%, #444 100%);
+  color: #ffd700;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: rgba(0,0,0,0.85);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  padding: 32px 16px 24px 16px;
+  text-align: center;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  border: 2px solid #ffd700;
+  background: #000;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: normal;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 1em;
+  margin-bottom: 28px;
+  color: #ffd700;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700 60%, #bfa100 100%);
+  color: #222;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.15);
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(90deg, #bfa100 60%, #ffd700 100%);
+  color: #111;
+}
+
+footer {
+  margin-top: 28px;
+  border-top: 1px solid #ffd70044;
+  padding-top: 18px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  color: #ffd700;
+}
+
+.contact-info a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.insta-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  filter: invert(87%) sepia(74%) saturate(749%) hue-rotate(1deg) brightness(104%) contrast(101%);
+}
