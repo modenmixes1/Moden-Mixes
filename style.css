@@ -1,20 +1,12 @@
 :root {
   --gold: #d4af37;
+  --gold-dark: #bfa100;
   --gold-light: #ffe082;
   --dark-bg: #181818;
   --dark-blur: rgba(24, 24, 24, 0.88);
   --white: #fff;
-  --serif: 'Playfair Display', serif;
+  --serif: 'Cormorant Garamond', serif;
   --sans: 'Montserrat', Arial, sans-serif;
-}
-
-/* Blurred background effect */
-.background-blur {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% 30%, #232323 0%, #181818 100%);
-  filter: blur(2px);
-  z-index: -1;
 }
 
 /* General styles */
@@ -28,54 +20,32 @@ body {
   box-sizing: border-box;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 60px 16px 40px 16px;
-  background: var(--dark-blur);
-  border-radius: 0 0 32px 32px;
-  box-shadow: 0 6px 32px rgba(0,0,0,0.25);
-  margin-bottom: 30px;
-  animation: fadeIn 1.2s;
-}
-
-.logo {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  border-radius: 50%;
-  border: 4px solid var(--gold);
-  background: #000;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 12px rgba(212,175,55,0.1);
-}
-
-h1 {
+/* Headings use the fancy serif font */
+h1, h2, h3 {
   font-family: var(--serif);
-  font-size: 2.8em;
-  margin: 0 0 10px 0;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  font-family: var(--serif);
-  font-size: 1.25em;
-  color: var(--white);
-  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
-.tagline {
-  font-size: 1.1em;
-  color: var(--gold-light);
-  margin-bottom: 22px;
+h1 {
+  font-size: 2.8em;
+  color: var(--gold);
 }
 
+h2 {
+  color: var(--gold);
+  font-size: 1.5em;
+}
+
+h3 {
+  color: var(--gold-dark);
+  font-size: 1.1em;
+}
+
+/* Email button fix */
 .contact-btn {
   display: inline-block;
-  background: linear-gradient(90deg, var(--gold) 60%, #bfa100 100%);
-  color: #232323;
+  background: linear-gradient(90deg, var(--gold-dark) 60%, var(--gold) 100%);
+  color: #181818;
   padding: 14px 38px;
   border-radius: 32px;
   font-size: 1.1em;
@@ -90,8 +60,8 @@ h1 {
   cursor: pointer;
 }
 .contact-btn:hover {
-  background: linear-gradient(90deg, #bfa100 60%, var(--gold) 100%);
-  color: #111;
+  background: linear-gradient(90deg, var(--gold) 60%, var(--gold-dark) 100%);
+  color: #fff;
   box-shadow: 0 4px 24px rgba(212,175,55,0.22);
 }
 
