@@ -84,6 +84,7 @@
       font-family: 'Playfair Display', serif;
       letter-spacing: 1.5px;
       text-shadow: 0 1px 6px #fff7c2;
+      cursor: pointer;
     }
     .button:hover {
       background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
@@ -148,36 +149,114 @@
     ul {
       padding-left: 22px;
     }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: #18120a;
+      border-radius: 16px;
+      padding: 32px 24px 24px 24px;
+      box-shadow: 0 6px 32px rgba(255,215,0,0.15), 0 1.5px 10px rgba(0,0,0,0.12);
+      max-width: 400px;
+      width: 90vw;
+      border: 2px solid gold;
+      position: relative;
+      color: #fff;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      color: gold;
+      font-size: 26px;
+      text-align: center;
+    }
+    .close {
+      position: absolute;
+      top: 14px; right: 18px;
+      color: #ffe066;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .modal-content label {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Playfair Display', serif;
+      color: #ffe066;
+      font-size: 16px;
+    }
+    .modal-content input, .modal-content textarea {
+      width: 100%;
+      padding: 9px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: 1px solid #ffd700;
+      background: #2d230e;
+      color: #ffe066;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    .modal-content button[type="submit"] {
+      background: linear-gradient(90deg, #ffe066 0%, #ffd700 60%, #bfa43a 100%);
+      color: #18120a;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px 24px;
+      margin-top: 12px;
+      cursor: pointer;
+      width: 100%;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(255,215,0,0.12);
+      transition: background 0.2s, color 0.2s;
+    }
+    .modal-content button[type="submit"]:hover {
+      background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+      color: #000;
+    }
     @media (max-width: 600px) {
       header h1 { font-size: 28px; }
       h2 { font-size: 22px; }
       section { margin: 0 6px 24px 6px; }
       .button { font-size: 16px; padding: 10px 18px; }
+      .modal-content { padding: 18px 6px 16px 6px; }
     }
   </style>
 </head>
 <body>
   <canvas id="starfield"></canvas>
   <header>
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=300&q=80" alt="Modern Mixes Logo" />
+    <img src="logo.png" alt="Modern Mixes Logo" />
     <h1>Modern Mixes</h1>
-    <p>Mobile Bartending for Events & Celebrations</p>
-    <a href="#contact" class="button">Book Your Event</a>
+    <p>Mobile Bartending for Events & Celebrations<br>
+      <span style="display:block;color:#ffe066;font-weight:bold;font-size:18px;">Certified Kosher</span>
+    </p>
+    <button class="button" id="contactBtn">Contact Us</button>
   </header>
   <main>
     <section class="about-section">
       <h2>About Us</h2>
       <p>
-        Modern Mixes brings the craft cocktail experience to your event. Our professional bartenders create signature drinks and unforgettable moments, whether it’s a wedding, party, or corporate celebration.
+        Modern Mixes brings the craft cocktail experience to your event. Our professional bartenders create signature drinks and unforgettable moments, whether it’s a wedding, party, or corporate celebration. <strong style="color:gold;">We are certified kosher.</strong>
       </p>
     </section>
     <section class="why-section">
       <h2>Why Choose Us?</h2>
       <ul>
         <li>Experienced, friendly, and certified bartenders</li>
-        <li>Custom cocktail menus tailored to your event</li>
         <li>Premium ingredients and elegant presentation</li>
         <li>Stress-free setup and cleanup</li>
+        <li>Certified Kosher</li>
       </ul>
     </section>
     <section class="testimonials-section">
@@ -198,24 +277,35 @@
       <h3>Do you provide the alcohol?</h3>
       <p>We can provide a shopping list, or work with your venue’s policies to ensure a seamless experience.</p>
       <h3>How do I book?</h3>
-      <p>Just click the button above or email us at <a href="mailto:info@modernmixes.com" style="color:gold;">info@modernmixes.com</a>!</p>
-    </section>
-    <section id="contact" class="about-section">
-      <h2>Contact Us</h2>
-      <p>
-        Ready to elevate your event? Reach out for a free quote or to discuss your vision!
-      </p>
-      <p>
-        <strong>Email:</strong> <a href="mailto:info@modernmixes.com" style="color:gold;">info@modernmixes.com</a><br>
-        <strong>Phone:</strong> <a href="tel:555-123-4567" style="color:gold;">555-123-4567</a>
-      </p>
+      <p>Click "Contact Us" above or email us at <a href="mailto:info@modernmixes.com" style="color:gold;">info@modernmixes.com</a>!</p>
     </section>
   </main>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/mnqepqra" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
   <footer style="text-align:center; color:#ffe066; font-family:'Playfair Display',serif; padding:24px 0 16px 0; z-index:3; position:relative;">
-    &copy; 2025 Modern Mixes. All rights reserved.
+    &copy; 2025 Modern Mixes. All rights reserved.<br>
+    <span style="color:gold;">Gershon Moses &nbsp;|&nbsp; (443) 204-0803</span>
   </footer>
+
   <!-- Starfield animation script -->
   <script>
+    // Starfield
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
     let w, h;
@@ -225,12 +315,10 @@
     }
     window.addEventListener('resize', resize);
     resize();
-
     function drawStars() {
       ctx.clearRect(0, 0, w, h);
       for (let i = 0; i < 180; i++) {
         const x = Math.random() * w;
-        // More stars near the "floor"
         const y = Math.pow(Math.random(), 1.5) * h * 0.7 + h * 0.3;
         const r = Math.random() * 1.5 + 0.3;
         ctx.beginPath();
@@ -243,6 +331,22 @@
       }
     }
     setInterval(drawStars, 120);
+
+    // Modal logic
+    const modal = document.getElementById('contactModal');
+    const btn = document.getElementById('contactBtn');
+    const close = document.getElementById('closeModal');
+    btn.onclick = function() {
+      modal.style.display = "flex";
+    }
+    close.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>
