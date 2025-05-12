@@ -9,40 +9,44 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(135deg, #18120a 0%, #3a2c15 100%);
+      background: radial-gradient(circle at 50% 50%, rgba(28, 28, 28, 0.9), rgba(12, 12, 12, 0.8)),
+                  linear-gradient(135deg, #0f0d08 0%, #2a1b0b 80%);
       color: #fff;
       min-height: 100vh;
       position: relative;
+      overflow: hidden;
     }
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('https://www.transparenttextures.com/patterns/gold-fish-scale.png'), linear-gradient(135deg, rgba(255,215,0,0.07) 0%, rgba(0,0,0,0.6) 100%);
+      background: url('https://www.transparenttextures.com/patterns/triangles.png'), linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 0, 0, 0.5) 100%);
       opacity: 0.22;
       z-index: 0;
       pointer-events: none;
     }
     header {
       text-align: center;
-      padding: 48px 20px 24px;
+      padding: 60px 20px 30px;
       position: relative;
       z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     }
     header img {
-      width: 140px;
+      width: 160px;
       border-radius: 16px;
-      box-shadow: 0 6px 32px rgba(255,215,0,0.15), 0 1.5px 10px rgba(0,0,0,0.12);
-      margin-bottom: 18px;
-      background: #222;
+      box-shadow: 0 10px 35px rgba(255, 215, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 40px;
+      font-size: 48px;
       margin: 0;
-      color: gold;
+      color: #f0c420;
       letter-spacing: 2px;
-      text-shadow: 0 2px 12px #000;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
     header p {
       font-size: 20px;
@@ -52,47 +56,42 @@
     }
     .button {
       display: inline-block;
-      padding: 14px 32px;
-      background: linear-gradient(90deg, #ffe066 0%, #ffd700 60%, #bfa43a 100%);
+      padding: 16px 36px;
+      background: linear-gradient(90deg, #f5c35b 0%, #e3a535 100%);
       color: #18120a;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
-      margin-top: 28px;
+      margin-top: 30px;
       font-size: 18px;
-      box-shadow: 0 2px 8px rgba(255,215,0,0.15);
-      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.25);
+      transition: background 0.3s, color 0.3s;
     }
     .button:hover {
-      background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+      background: linear-gradient(90deg, #e3a535 0%, #f5c35b 100%);
       color: #000;
     }
     main {
       position: relative;
       z-index: 1;
+      padding-top: 40px;
     }
     section {
-      padding: 44px 20px 30px;
+      padding: 50px 30px;
       max-width: 900px;
       margin: 0 auto;
-      background: rgba(30, 20, 10, 0.80);
+      background: rgba(40, 20, 10, 0.85);
       border-radius: 18px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      border: 1.5px solid rgba(255,215,0,0.10);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
     }
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      margin-bottom: 18px;
-      color: gold;
-      border-bottom: 2px solid gold;
-      display: inline-block;
-      padding-bottom: 4px;
-      letter-spacing: 1px;
-    }
-    ul, ol {
-      padding-left: 22px;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #f0c420;
+      border-bottom: 3px solid #f5c35b;
+      padding-bottom: 8px;
     }
     .info-text {
       line-height: 1.7;
@@ -100,71 +99,59 @@
       color: #f7f5ee;
     }
     .highlight {
-      color: #ffe066;
+      color: #f5c35b;
       font-weight: bold;
     }
     .service-list li {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     .testimonials {
-      margin-top: 18px;
+      margin-top: 20px;
       padding-left: 0;
       list-style: none;
     }
     .testimonials li {
-      margin-bottom: 18px;
-      background: rgba(255, 215, 0, 0.07);
-      border-left: 4px solid gold;
-      padding: 12px 18px;
-      border-radius: 8px;
+      margin-bottom: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border-left: 4px solid #f5c35b;
+      padding: 15px 20px;
+      border-radius: 10px;
       font-style: italic;
       color: #fffbe7;
     }
-    .faq-list {
-      margin-top: 10px;
-      padding-left: 0;
-      list-style: none;
-    }
-    .faq-list li {
-      margin-bottom: 18px;
-      background: rgba(255, 215, 0, 0.07);
-      border-left: 3px solid #ffe066;
-      padding: 10px 16px;
-      border-radius: 7px;
-    }
     footer {
-      background: linear-gradient(90deg, #18120a 60%, #bfa43a 100%);
+      background: linear-gradient(90deg, #18120a 70%, #e3a535 100%);
       text-align: center;
-      padding: 28px 10px 18px;
-      font-size: 15px;
+      padding: 30px 20px 20px;
+      font-size: 16px;
       color: #ffe066;
       letter-spacing: 1px;
-      border-top: 2px solid #ffd700;
+      border-top: 3px solid #f5c35b;
       position: relative;
       z-index: 2;
     }
     .contact-info {
-      margin-top: 10px;
+      margin-top: 15px;
       color: #fffbe7;
-      font-size: 17px;
+      font-size: 16px;
     }
     a.social {
-      color: gold;
+      color: #f5c35b;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      margin-top: 10px;
-      font-size: 17px;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 18px;
       font-weight: 600;
     }
     a.social img {
-      filter: drop-shadow(0 0 2px #ffd700);
+      filter: drop-shadow(0 0 5px #f5c35b);
     }
     @media (max-width: 700px) {
-      header h1 { font-size: 28px; }
-      section { padding: 28px 8px 18px; }
-      h2 { font-size: 22px; }
+      header h1 { font-size: 32px; }
+      section { padding: 30px 15px 20px; }
+      h2 { font-size: 24px; }
     }
   </style>
 </head>
@@ -209,15 +196,15 @@
       <ul class="testimonials">
         <li>
           “Moden Mixes made our wedding unforgettable! The bartenders were professional, the drinks were delicious, and the gold bar setup looked incredible.”<br>
-          <span style="color:#ffe066;">– Rachel & David S.</span>
+          <span style="color:#f5c35b;">– Rachel & David S.</span>
         </li>
         <li>
           “We hired Moden Mixes for our company holiday party and couldn’t be happier. Everything was seamless, and our guests are still talking about the cocktails!”<br>
-          <span style="color:#ffe066;">– Jonathan M., HR Director</span>
+          <span style="color:#f5c35b;">– Jonathan M., HR Director</span>
         </li>
         <li>
           “The attention to detail and customer service was outstanding. Highly recommend for any event!”<br>
-          <span style="color:#ffe066;">– Sarah B.</span>
+          <span style="color:#f5c35b;">– Sarah B.</span>
         </li>
       </ul>
     </section>
@@ -234,7 +221,7 @@
         </li>
         <li>
           <strong>How do I book?</strong><br>
-          Click “Book Your Event” above or email <a href="mailto:modenmixes@gmail.com" style="color:gold;">modenmixes@gmail.com</a>. We’ll respond within 24 hours to discuss your needs and provide a custom quote.
+          Click “Book Your Event” above or email <a href="mailto:modenmixes@gmail.com" style="color:#f5c35b;">modenmixes@gmail.com</a>. We’ll respond within 24 hours to discuss your needs and provide a custom quote.
         </li>
         <li>
           <strong>Do you carry insurance?</strong><br>
