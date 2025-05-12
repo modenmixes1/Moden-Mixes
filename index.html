@@ -3,32 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moden Mixes | Mobile Bartending</title>
+  <title>Modern Mixes | Mobile Bartending</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 100vh;
+    }
+    body {
       font-family: 'Open Sans', sans-serif;
       color: #fff;
       min-height: 100vh;
-      background: #18120a url('https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background: #18120a url('https://cdn.pixabay.com/photo/2017/01/06/19/15/abstract-1958937_1280.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
+      overflow-x: hidden;
     }
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,215,0,0.10) 0%, rgba(0,0,0,0.7) 100%);
+      background: linear-gradient(135deg, rgba(255,215,0,0.10) 0%, rgba(0,0,0,0.8) 100%);
       opacity: 0.7;
-      z-index: 0;
+      z-index: 1;
       pointer-events: none;
+    }
+    #starfield {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 2;
+      pointer-events: none;
+      display: block;
+    }
+    header, main, footer {
+      position: relative;
+      z-index: 3;
     }
     header {
       text-align: center;
       padding: 48px 20px 24px;
-      position: relative;
-      z-index: 1;
     }
     header img {
       width: 140px;
@@ -51,6 +67,7 @@
       margin: 10px 0 0 0;
       color: #f5e7b4;
       font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
     }
     .button {
       display: inline-block;
@@ -64,6 +81,9 @@
       font-size: 18px;
       box-shadow: 0 2px 8px rgba(255,215,0,0.15);
       transition: background 0.2s, color 0.2s;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+      text-shadow: 0 1px 6px #fff7c2;
     }
     .button:hover {
       background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
@@ -71,7 +91,7 @@
     }
     main {
       position: relative;
-      z-index: 1;
+      z-index: 3;
     }
     section {
       max-width: 900px;
@@ -84,33 +104,145 @@
     }
     /* Unique section styles */
     .about-section {
-      background: rgba(30, 20, 10, 0.88);
+      background: rgba(30, 20, 10, 0.92);
       border-left: 8px solid gold;
       padding: 44px 20px 30px;
     }
-    .services-section {
-      background: linear-gradient(120deg, rgba(255,215,0,0.10) 60%, rgba(30,20,10,0.92) 100%);
-      border-top: 4px solid #ffe066;
-      padding: 44px 20px 30px;
-    }
     .why-section {
-      background: rgba(30, 20, 10, 0.92);
+      background: linear-gradient(120deg, rgba(255,215,0,0.13) 60%, rgba(30,20,10,0.95) 100%);
       border-right: 8px solid #ffd700;
       padding: 44px 20px 30px;
     }
     .testimonials-section {
-      background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(30,20,10,0.92) 100%);
+      background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(30,20,10,0.95) 100%);
       border-bottom: 4px solid #ffe066;
       padding: 44px 20px 30px;
     }
     .faqs-section {
-      background: rgba(30, 20, 10, 0.96);
+      background: rgba(30, 20, 10, 0.98);
       border-left: 8px double gold;
       border-right: 8px double gold;
       padding: 44px 20px 30px;
     }
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 18px;
       color: gold;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px #000, 0 1px 0 #ffe066;
+    }
+    h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: #ffe066;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 6px #000;
+    }
+    p, li {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+      color: #f5e7b4;
+      line-height: 1.7;
+      text-shadow: 0 1px 4px #000;
+    }
+    ul {
+      padding-left: 22px;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+      section { margin: 0 6px 24px 6px; }
+      .button { font-size: 16px; padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <header>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=300&q=80" alt="Modern Mixes Logo" />
+    <h1>Modern Mixes</h1>
+    <p>Mobile Bartending for Events & Celebrations</p>
+    <a href="#contact" class="button">Book Your Event</a>
+  </header>
+  <main>
+    <section class="about-section">
+      <h2>About Us</h2>
+      <p>
+        Modern Mixes brings the craft cocktail experience to your event. Our professional bartenders create signature drinks and unforgettable moments, whether it’s a wedding, party, or corporate celebration.
+      </p>
+    </section>
+    <section class="why-section">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Experienced, friendly, and certified bartenders</li>
+        <li>Custom cocktail menus tailored to your event</li>
+        <li>Premium ingredients and elegant presentation</li>
+        <li>Stress-free setup and cleanup</li>
+      </ul>
+    </section>
+    <section class="testimonials-section">
+      <h2>Testimonials</h2>
+      <p>
+        “Modern Mixes made our wedding reception magical. The cocktails were delicious and the service was top-notch!”<br>
+        <strong>- Jamie & Alex</strong>
+      </p>
+      <p>
+        “Our guests are still talking about the creative drinks and friendly staff. Highly recommend!”<br>
+        <strong>- Taylor S.</strong>
+      </p>
+    </section>
+    <section class="faqs-section">
+      <h2>FAQs</h2>
+      <h3>What areas do you serve?</h3>
+      <p>We serve the greater metropolitan area and are happy to travel for special events.</p>
+      <h3>Do you provide the alcohol?</h3>
+      <p>We can provide a shopping list, or work with your venue’s policies to ensure a seamless experience.</p>
+      <h3>How do I book?</h3>
+      <p>Just click the button above or email us at <a href="mailto:info@modernmixes.com" style="color:gold;">info@modernmixes.com</a>!</p>
+    </section>
+    <section id="contact" class="about-section">
+      <h2>Contact Us</h2>
+      <p>
+        Ready to elevate your event? Reach out for a free quote or to discuss your vision!
+      </p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:info@modernmixes.com" style="color:gold;">info@modernmixes.com</a><br>
+        <strong>Phone:</strong> <a href="tel:555-123-4567" style="color:gold;">555-123-4567</a>
+      </p>
+    </section>
+  </main>
+  <footer style="text-align:center; color:#ffe066; font-family:'Playfair Display',serif; padding:24px 0 16px 0; z-index:3; position:relative;">
+    &copy; 2025 Modern Mixes. All rights reserved.
+  </footer>
+  <!-- Starfield animation script -->
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function drawStars() {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < 180; i++) {
+        const x = Math.random() * w;
+        // More stars near the "floor"
+        const y = Math.pow(Math.random(), 1.5) * h * 0.7 + h * 0.3;
+        const r = Math.random() * 1.5 + 0.3;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.7 + 0.3})`;
+        ctx.shadowColor = '#ffd700';
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+    setInterval(drawStars, 120);
+  </script>
+</body>
+</html>
