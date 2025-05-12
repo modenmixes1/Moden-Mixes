@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #222;
-      background: url('https://images.unsplash.com/photo-1600180758890-60a67898c7f8?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1600182185557-f782b0bd33a2?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       line-height: 1.6;
     }
@@ -21,40 +21,46 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(255,255,255,0.85);
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
 
     header {
-      background: linear-gradient(90deg, #000, #ffd700 80%);
+      background: #111;
       color: #fff;
-      padding: 40px 0 20px 0;
+      padding: 50px 0 20px 0;
       text-align: center;
+      position: relative;
     }
 
     header img {
-      max-width: 160px;
-      margin-bottom: 10px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ffd700;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      background: #fff;
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin: 0 0 10px 0;
-      letter-spacing: 2px;
       color: #ffd700;
-      text-shadow: 1px 1px 6px #222;
+      text-shadow: 1px 1px 4px #000;
     }
 
     nav {
-      background: #222;
+      background: #000;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
     }
 
     nav a {
       color: #ffd700;
       text-decoration: none;
-      margin: 0 18px;
+      margin: 0 20px;
       font-weight: bold;
       letter-spacing: 1px;
       transition: color 0.2s;
@@ -66,11 +72,11 @@
 
     .container {
       max-width: 1000px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 0 16px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
     }
 
     section {
@@ -79,9 +85,9 @@
     }
 
     h2 {
-      color: #000;
-      margin-bottom: 12px;
-      font-size: 2em;
+      color: #111;
+      margin-bottom: 16px;
+      font-size: 2.2em;
       text-align: center;
     }
 
@@ -94,10 +100,11 @@
 
     .service {
       flex: 1 1 260px;
-      background: #fafafa;
+      background: #fffbea;
+      border-left: 6px solid #ffd700;
       border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       min-width: 220px;
     }
 
@@ -108,7 +115,7 @@
 
     .contact-info {
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .contact-info a, .contact-info p {
@@ -123,12 +130,12 @@
     }
 
     form {
-      max-width: 400px;
+      max-width: 420px;
       margin: 0 auto;
-      background: #f9f9f9;
+      background: #fff;
       padding: 24px;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     input, textarea, button {
@@ -142,7 +149,7 @@
 
     button {
       background: #ffd700;
-      color: #222;
+      color: #111;
       font-weight: bold;
       border: none;
       cursor: pointer;
@@ -150,7 +157,7 @@
     }
 
     button:hover {
-      background: #222;
+      background: #111;
       color: #ffd700;
     }
 
@@ -174,7 +181,7 @@
     }
 
     footer {
-      background: #222;
+      background: #000;
       color: #fff;
       text-align: center;
       padding: 24px 0 12px 0;
@@ -198,9 +205,7 @@
   <header>
     <img src="logo.png" alt="Moden Mixes Logo" />
     <h1>Moden Mixes</h1>
-    <p style="font-size:1.2em; color:#fff; margin-bottom:0;">
-      Mobile Bartending for All Your Special Occasions
-    </p>
+    <p style="font-size:1.2em; color:#fff; margin-bottom:0;">Mobile Bartending for All Your Special Occasions</p>
     <p style="color:#b6ffb0; font-weight:bold; margin:8px 0 0 0;">Certified Kosher</p>
   </header>
 
@@ -208,7 +213,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
-    <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/moden_mixes" target="_blank">Instagram</a>
   </nav>
 
   <div class="container">
@@ -261,21 +266,17 @@
         <button type="submit">Send Message</button>
       </form>
       <div class="social-links">
-        <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" title="Follow us on Instagram" />
+        <a href="https://www.instagram.com/moden_mixes" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
         </a>
       </div>
     </section>
   </div>
 
   <footer>
-    <p>
-      &copy; 2025 Moden Mixes | Mobile Bartending Services<br>
-      Serving Maryland, DC, Pennsylvania, Delaware, and Virginia
-    </p>
-    <p>
-      Site by <a href="https://www.instagram.com/moden_mixes" style="color:#ffd700;" target="_blank" rel="noopener">Moden Mixes</a>
-    </p>
+    <p>&copy; 2025 Moden Mixes | Mobile Bartending Services<br>
+    Serving Maryland, DC, Pennsylvania, Delaware, and Virginia</p>
+    <p>Site by <a href="https://www.instagram.com/moden_mixes" style="color:#ffd700;" target="_blank">Moden Mixes</a></p>
   </footer>
 </body>
 </html>
