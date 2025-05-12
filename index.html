@@ -51,17 +51,21 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
     .drinks-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
     .drink {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 15px;
       border-radius: 10px;
-      max-width: 200px;
+    }
+    .drink img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
     .contact-btn {
       background-color: #fff;
@@ -101,6 +105,11 @@
   </header>
 
   <section class="section">
+    <h2>About Us</h2>
+    <p>Welcome to Moden Mixes, your premier mobile bartending service. We specialize in providing elegant and professional bartending for a variety of events, including weddings, bar/bat mitzvahs, corporate gatherings, fundraisers, and more. Our team of licensed bartenders is dedicated to delivering exceptional service, and we are proud to offer certified kosher options to meet your specific needs. Let us bring a touch of sophistication and fun to your next event.</p>
+  </section>
+
+  <section class="section">
     <h2>Events We Serve</h2>
     <p>Weddings, Bar/Bat Mitzvahs, Corporate Events, Fundraisers & More</p>
     <div class="gallery">
@@ -114,11 +123,26 @@
   <section class="section">
     <h2>Popular Drinks We Make</h2>
     <div class="drinks-list">
-      <div class="drink">Classic Mojito</div>
-      <div class="drink">Kosher Moscow Mule</div>
-      <div class="drink">Whiskey Sour</div>
-      <div class="drink">Mocktail Mixes</div>
-      <div class="drink">Custom Signature Cocktails</div>
+      <div class="drink">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/05/08/mojito-1869739_1280.jpg" alt="Classic Mojito">
+        <p>Classic Mojito</p>
+      </div>
+      <div class="drink">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/13/28/moscow-mule-2178776_1280.jpg" alt="Kosher Moscow Mule">
+        <p>Kosher Moscow Mule</p>
+      </div>
+      <div class="drink">
+        <img src="https://cdn.pixabay.com/photo/2017/06/14/18/38/whiskey-2407244_1280.jpg" alt="Whiskey Sour">
+        <p>Whiskey Sour</p>
+      </div>
+      <div class="drink">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/13/28/mocktail-2178777_1280.jpg" alt="Mocktail Mixes">
+        <p>Mocktail Mixes</p>
+      </div>
+      <div class="drink">
+        <img src="https://cdn.pixabay.com/photo/2015/07/02/20/57/cocktail-828931_1280.jpg" alt="Custom Signature Cocktails">
+        <p>Custom Signature Cocktails</p>
+      </div>
     </div>
   </section>
 
