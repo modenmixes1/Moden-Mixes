@@ -2,102 +2,246 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moden Mixes | Mobile Bartending</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #1C1E22;
-      color: #FFFFFF;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
     }
     header {
+      background: linear-gradient(90deg, #000, #ffd700 80%);
+      color: #fff;
+      padding: 40px 0 20px 0;
       text-align: center;
-      padding: 60px 20px 40px;
     }
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      margin: 0 0 10px;
-    }
-    .tagline {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .btn {
-      background-color: #C8A44C;
-      color: #1C1E22;
-      padding: 12px 24px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: #C8A44C;
+    header img {
+      max-width: 160px;
       margin-bottom: 10px;
     }
-    .services-list span {
-      display: inline-block;
-      margin: 10px 15px 0 0;
-      color: #C8A44C;
+    header h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px 0;
+      letter-spacing: 2px;
+      color: #ffd700;
+      text-shadow: 1px 1px 6px #222;
+    }
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 18px;
       font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 16px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    section {
+      margin-bottom: 40px;
+      padding-top: 20px;
+    }
+    h2 {
+      color: #ffd700;
+      margin-bottom: 12px;
+      font-size: 2em;
+      text-align: center;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .service {
+      flex: 1 1 260px;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 10px;
+      min-width: 220px;
+    }
+    .service h3 {
+      color: #222;
+      margin-top: 0;
     }
     .contact-info {
-      margin-top: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .contact-info a, .contact-info p {
+      color: #222;
+      font-size: 1.1em;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .contact-info a:hover {
+      color: #ffd700;
+    }
+    .social-links {
+      text-align: center;
+      margin: 20px 0 0 0;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #222;
+      text-decoration: none;
+      font-size: 1.5em;
+      vertical-align: middle;
+    }
+    .social-links img {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #eee;
+      transition: box-shadow 0.2s;
+    }
+    .social-links img:hover {
+      box-shadow: 0 2px 8px #ffd70088;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fafafa;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    button {
+      background: #ffd700;
+      color: #222;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #222;
+      color: #ffd700;
     }
     footer {
-      background: #111;
+      background: #222;
+      color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 24px 0 12px 0;
+      margin-top: 36px;
+    }
+    @media (max-width: 700px) {
+      .services {
+        flex-direction: column;
+        gap: 0;
+      }
+      .container {
+        margin: 16px;
+        padding: 0 4px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Moden Mixes Logo" class="logo">
-    <h1>Elevate Your Event. Sip in Style.</h1>
-    <p class="tagline">Professional Mobile Bartending — Certified Kosher</p>
-    <a href="#contact" class="btn">Book Your Event</a>
-  </header>
-
-  <section>
-    <h2>About</h2>
-    <p>Welcome to Moden Mixes, your premier mobile bartending service. We bring the bar to you, offering a professional, certified kosher, and unique cocktail experience that will elevate any occasion — from weddings and private parties to corporate events and more.</p>
-  </section>
-
-  <section>
-    <h2>Services</h2>
-    <div class="services-list">
-      <span>Weddings</span>
-      <span>Private Parties</span>
-      <span>Corporate Events</span>
-      <span>Custom Cocktails</span>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p class="contact-info">
-      <strong>Gershon Moses</strong><br>
-      Phone: <a href="tel:4432040803" style="color: #C8A44C; text-decoration: none;">(443) 204-0803</a><br>
-      Certified Kosher Service
+    <img src="logo.png" alt="Moden Mixes Logo" />
+    <h1>Moden Mixes</h1>
+    <p style="font-size:1.2em; color:#fff; margin-bottom:0;">
+      Mobile Bartending for All Your Special Occasions
     </p>
-  </section>
-
+    <p style="color:#b6ffb0; font-weight:bold; margin:8px 0 0 0;">Certified Kosher</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+  <div class="container">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        At Moden Mixes, we bring the bar to you! Our certified, professional bartenders are ready to elevate your event with signature cocktails, mocktails, and exceptional service. Whether it's a wedding, corporate event, festival, or intimate gathering, we handle every detail so you can enjoy your celebration.
+      </p>
+      <p>
+        Let us curate a custom cocktail menu for your theme and guests. We pride ourselves on reliability, creativity, and making your event unforgettable.
+      </p>
+    </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Mobile Bartending</h3>
+          <p>Certified, friendly bartenders for any event size. We bring all the tools and ingredients for a seamless bar experience.</p>
+        </div>
+        <div class="service">
+          <h3>Custom Cocktails & Mocktails</h3>
+          <p>Signature drinks tailored for your event, including non-alcoholic options for everyone to enjoy.</p>
+        </div>
+        <div class="service">
+          <h3>Mixology Classes</h3>
+          <p>Fun, interactive cocktail-making classes for groups-perfect for parties, team building, or special occasions.</p>
+        </div>
+        <div class="service">
+          <h3>Event Staffing</h3>
+          <p>Professional staff for serving and event support, ensuring your celebration runs smoothly from start to finish.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p><strong>Gershon Moses</strong></p>
+        <p>
+          <a href="tel:4432040803"> (443) 204-0803</a> |
+          <a href="mailto:modenmixes@gmail.com"> modenmixes@gmail.com</a>
+        </p>
+      </div>
+      <form action="https://formspree.io/f/mnqeknaw" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" title="Follow us on Instagram" />
+        </a>
+      </div>
+    </section>
+  </div>
   <footer>
-    &copy; 2025 Moden Mixes. All rights reserved.
+    <p>
+      &copy; 2025 Moden Mixes | Mobile Bartending Services<br>
+      Serving Maryland, DC, Pennsylvania, Delaware, and Virginia
+    </p>
+    <p>
+      Site by <a href="https://www.instagram.com/moden_mixes" style="color:#ffd700;" target="_blank" rel="noopener">Moden Mixes</a>
+    </p>
   </footer>
 </body>
 </html>
