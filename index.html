@@ -8,12 +8,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: #222;
-      background: url('https://images.unsplash.com/photo-1600182185557-f782b0bd33a2?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      color: #fff;
+      background: url('images/black-gold-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       line-height: 1.6;
+      position: relative;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -24,15 +24,11 @@
       background-color: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
-
     header {
-      background: #111;
-      color: #fff;
-      padding: 50px 0 20px 0;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 0 20px 0;
       text-align: center;
-      position: relative;
     }
-
     header img {
       width: 160px;
       height: 160px;
@@ -43,129 +39,94 @@
       background: #fff;
       margin-bottom: 20px;
     }
-
     header h1 {
-      font-size: 2.8em;
+      font-size: 2.5em;
       margin: 0 0 10px 0;
+      letter-spacing: 2px;
       color: #ffd700;
-      text-shadow: 1px 1px 4px #000;
+      text-shadow: 1px 1px 6px #222;
     }
-
     nav {
-      background: #000;
+      background: #111;
       text-align: center;
-      padding: 12px 0;
+      padding: 10px 0;
     }
-
     nav a {
       color: #ffd700;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 18px;
       font-weight: bold;
       letter-spacing: 1px;
       transition: color 0.2s;
     }
-
     nav a:hover {
       color: #fff;
     }
-
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 900px;
+      margin: 30px auto;
       padding: 0 16px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
     }
-
     section {
       margin-bottom: 40px;
       padding-top: 20px;
     }
-
     h2 {
-      color: #111;
-      margin-bottom: 16px;
-      font-size: 2.2em;
+      color: #ffd700;
+      margin-bottom: 12px;
+      font-size: 2em;
       text-align: center;
     }
-
     .services {
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
       justify-content: center;
     }
-
     .service {
       flex: 1 1 260px;
-      background: #fffbea;
-      border-left: 6px solid #ffd700;
+      background: #222;
       border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 10px;
       min-width: 220px;
     }
-
     .service h3 {
-      color: #222;
+      color: #ffd700;
       margin-top: 0;
     }
-
+    .service p {
+      color: #ddd;
+    }
     .contact-info {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-
     .contact-info a, .contact-info p {
-      color: #222;
+      color: #fff;
       font-size: 1.1em;
       text-decoration: none;
       margin: 0 8px;
     }
-
     .contact-info a:hover {
       color: #ffd700;
     }
-
-    form {
-      max-width: 420px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    button {
-      background: #ffd700;
-      color: #111;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background: #111;
-      color: #ffd700;
-    }
-
     .social-links {
       text-align: center;
-      margin: 20px 0;
+      margin: 20px 0 0 0;
     }
-
+    .social-links a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5em;
+      vertical-align: middle;
+    }
     .social-links img {
       width: 32px;
       height: 32px;
@@ -175,25 +136,51 @@
       border: 1px solid #eee;
       transition: box-shadow 0.2s;
     }
-
     .social-links img:hover {
       box-shadow: 0 2px 8px #ffd70088;
     }
-
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #111;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-size: 1em;
+      background: #222;
+      color: #fff;
+    }
+    button {
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #222;
+      color: #ffd700;
+    }
     footer {
-      background: #000;
+      background: #111;
       color: #fff;
       text-align: center;
       padding: 24px 0 12px 0;
       margin-top: 36px;
     }
-
     @media (max-width: 700px) {
       .services {
         flex-direction: column;
         gap: 0;
       }
-
       .container {
         margin: 16px;
         padding: 0 4px;
@@ -205,29 +192,27 @@
   <header>
     <img src="logo.png" alt="Moden Mixes Logo" />
     <h1>Moden Mixes</h1>
-    <p style="font-size:1.2em; color:#fff; margin-bottom:0;">Mobile Bartending for All Your Special Occasions</p>
+    <p style="font-size:1.2em; color:#fff; margin-bottom:0;">
+      Mobile Bartending for All Your Special Occasions
+    </p>
     <p style="color:#b6ffb0; font-weight:bold; margin:8px 0 0 0;">Certified Kosher</p>
   </header>
-
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
-    <a href="https://www.instagram.com/moden_mixes" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">Instagram</a>
   </nav>
-
   <div class="container">
     <section id="about">
       <h2>About Us</h2>
-      <p style="text-align:center;">
-        At Moden Mixes, we bring the bar to you! Our certified, professional bartenders elevate your event with signature cocktails, mocktails, and unmatched service.
-        Whether it's a wedding, corporate event, Bar/Bat Mitzvah, or intimate gathering, we ensure every drink and detail is perfect.
+      <p>
+        At Moden Mixes, we bring the bar to you! Our certified, professional bartenders are ready to elevate your event with signature cocktails, mocktails, and exceptional service. Whether it's a wedding, corporate event, festival, or intimate gathering, we handle every detail so you can enjoy your celebration.
       </p>
-      <p style="text-align:center;">
-        Let us curate a custom menu for your theme and guests. We pride ourselves on elegance, reliability, and unforgettable experiences.
+      <p>
+        Let us curate a custom cocktail menu for your theme and guests. We pride ourselves on reliability, creativity, and making your event unforgettable.
       </p>
     </section>
-
     <section id="services">
       <h2>Our Services</h2>
       <div class="services">
@@ -240,16 +225,15 @@
           <p>Signature drinks tailored for your event, including non-alcoholic options for everyone to enjoy.</p>
         </div>
         <div class="service">
+          <h3>Events We Serve</h3>
+          <p>Bar & Bat Mitzvahs, Corporate Events, Weddings, Birthday Parties, Private Gatherings, and more.</p>
+        </div>
+        <div class="service">
           <h3>Event Staffing</h3>
           <p>Professional staff for serving and event support, ensuring your celebration runs smoothly from start to finish.</p>
         </div>
-        <div class="service">
-          <h3>Events We Serve</h3>
-          <p>Weddings, birthdays, Bar/Bat Mitzvahs, corporate events, festivals, holiday parties, and more.</p>
-        </div>
       </div>
     </section>
-
     <section id="contact">
       <h2>Contact Us</h2>
       <div class="contact-info">
@@ -266,17 +250,20 @@
         <button type="submit">Send Message</button>
       </form>
       <div class="social-links">
-        <a href="https://www.instagram.com/moden_mixes" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        <a href="https://www.instagram.com/moden_mixes" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" title="Follow us on Instagram" />
         </a>
       </div>
     </section>
   </div>
-
   <footer>
-    <p>&copy; 2025 Moden Mixes | Mobile Bartending Services<br>
-    Serving Maryland, DC, Pennsylvania, Delaware, and Virginia</p>
-    <p>Site by <a href="https://www.instagram.com/moden_mixes" style="color:#ffd700;" target="_blank">Moden Mixes</a></p>
+    <p>
+      &copy; 2025 Moden Mixes | Mobile Bartending Services<br>
+      Serving Maryland, DC, Pennsylvania, Delaware, and Virginia
+    </p>
+    <p>
+      Site by <a href="https://www.instagram.com/moden_mixes" style="color:#ffd700;" target="_blank" rel="noopener">Moden Mixes</a>
+    </p>
   </footer>
 </body>
 </html>
