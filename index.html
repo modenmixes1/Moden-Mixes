@@ -6,30 +6,192 @@
   <title>Modern Mixes | Mobile Bartending</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      min-height: 100vh;
-    }
+    html, <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Mixes | Mobile Bartending</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
     body {
+      margin: 0;
       font-family: 'Open Sans', sans-serif;
       color: #fff;
-      min-height: 100vh;
-      background: #18120a url('https://cdn.pixabay.com/photo/2017/01/06/19/15/abstract-1958937_1280.jpg') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
+      background: #111;
       overflow-x: hidden;
     }
-    body::before {
-      content: "";
+
+    canvas#starfield {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,215,0,0.10) 0%, rgba(0,0,0,0.8) 100%);
-      opacity: 0.7;
-      z-index: 1;
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+    }
+
+    header img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 40px rgba(255,215,0,0.18), 0 2px 16px rgba(0,0,0,0.18);
+      margin-bottom: 20px;
+      background: #222;
+      border: 3px solid gold;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,215,0,0.6), 0 8px 40px rgba(255,215,0,0.18);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(255,215,0,0.3), 0 0 20px rgba(255,215,0,0.1);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.2);
+      }
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2em;
+      margin: 0;
+      color: gold;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 14px 32px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #111;
+      background-color: gold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #ffdb58;
+      transform: translateY(-2px);
+    }
+
+    .kosher-badge {
+      display: inline-block;
+      background: #2c2c2c;
+      color: #ffd700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-top: 10px;
+      border: 1px solid gold;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: gold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777;
+      font-size: 0.9em;
+      background: #0a0a0a;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <header>
+    <img src="Logo.png" alt="Modern Mixes Logo" />
+    <h1>Modern Mixes</h1>
+    <p>Mobile Bartending for Events & Celebrations</p>
+    <div class="kosher-badge">Certified Kosher</div>
+    <br>
+    <button class="button" id="contactBtn">Contact Us</button>
+  </header>
+
+  <main>
+    <h2>Craft Cocktails, Wherever You Are</h2>
+    <p>We bring a premium bar experience to your doorstep. Modern Mixes provides custom cocktail menus, professional bartenders, and unforgettable service tailored to weddings, parties, corporate events, and more. Certified Kosher and committed to excellence, we ensure every detail of your celebration is perfect.</p>
+    <p>Whether you're celebrating a milestone or hosting an elegant soirée, Modern Mixes delivers mixology magic that matches your vibe. Let’s raise the bar—together.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Modern Mixes | Baltimore, MD | All rights reserved
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const stars = Array.from({ length: 100 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 1.5,
+      speed: Math.random() * 0.5 + 0.2
+    }));
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'white';
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+
+    document.getElementById('contactBtn').addEventListener('click', () => {
+      window.location.href = 'mailto:info@modernmixes.com';
+    });
+  </script>
+</body>
+</html>
     #starfield {
       position: fixed;
       top: 0; left: 0;
