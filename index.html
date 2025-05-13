@@ -66,11 +66,9 @@
     margin: 0 auto 20px auto;
     padding: 0;
   }
-
   header img:hover {
     box-shadow: 0 0 0 8px rgba(255,215,0,0.25), 0 8px 40px rgba(255,215,0,0.18);
   }
-
   header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 54px;
@@ -91,28 +89,29 @@
     letter-spacing: 1px;
     text-shadow: 0 1px 6px #000;
   }
-
+    
   .kosher-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 1.2em; /* Adjust to match your site's header size */
-    font-weight: bold;
-    background: rgba(255,215,0,0.10);
-    color: #bfa100;
-    border: 1.5px solid #bfa100;
-    border-radius: 18px;
-    padding: 6px 18px;
-    margin-top: 10px;
-  }
-
-  .kosher-badge .kosher-logo {
-    height: 1.2em; /* Matches font size */
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: rgba(255,215,0,0.10);
+      color: #bfa100;
+      border: 1.5px solid #bfa100;
+      border-radius: 18px;
+      padding: 6px 18px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+    
+    .kosher-badge .kosher-logo {
+      height: 1.2em;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
   .button {
     display: inline-block;
     padding: 16px 36px;
@@ -644,36 +643,29 @@
     background: #ffe066;
   }
 
-</style>
+ </style>
 </head>
 <body>
   <canvas id="starfield"></canvas>
   <header>
     <img src="Logo.png" alt="Moden Mixes Logo" />
-   <h1>Moden Mixes</h1>
-<p>Mobile Bartending for Events & Celebrations</p>
-<div style="display: flex; justify-content: center; align-items: center; gap: 0; margin-top: 20px;">
-  <span style="font-size: 1.1em;">Certified Kosher</span>
-  <img src="kosher.png.jpg" 
-       alt="Kosher Certified" 
-       style="height: 24px; width: auto; margin-left: 4px; vertical-align: middle;"/>
-</div>
-<button class="button" id="contactBtn">Contact Us</button>
-</header>
-
-<main>
-  <section class="about-section">
-    <div class="section-inner">
-      <h2>About Us</h2>
-      <p>
-        <strong>Moden Mixes</strong> is Baltimore's first certified kosher premier mobile bartending service founded by Gershon Moses. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.
-      </p>
-      <p>
-        Our team believes every event deserves a signature experience. From intimate gatherings to grand weddings, we deliver excellence, creativity, and hospitality.
-      </p>
+    <h1>Moden Mixes</h1>
+    <p>Mobile Bartending for Events & Celebrations</p>
+    <div class="kosher-badge" style="justify-content: center; margin: 0 auto;">
+      <span>Certified Kosher</span>
+      <img src="kosher.png.jpg" class="kosher-logo" alt="Kosher Certified" />
     </div>
-  </section>
-
+    <button class="button" id="contactBtn">Contact Us</button>
+  </header>
+<main>
+    <section class="about-section">
+      <div class="section-inner">
+        <h2>About Us</h2>
+        <p>
+          <strong>Moden Mixes</strong> is Baltimore's first certified kosher premier mobile bartending service founded by Gershon Moses. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.
+        </p>
+      </div>
+    </section>
   <section class="why-section">
     <div class="section-inner">
       <h2>Why Choose Moden Mixes?</h2>
