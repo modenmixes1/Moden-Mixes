@@ -638,18 +638,57 @@
 </head>
 <body>
   <canvas id="starfield"></canvas>
-  <header>
-    <img src="Logo.png" alt="Moden Mixes Logo" />
+  <style>
+  .modal-content button {
+    background: #ffd700;
+    padding: 14px 28px;
+    color: #18120a;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 16px;
+    margin-top: 20px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .modal-content button:hover {
+    background: #ffe066;
+  }
+</style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header style="text-align: center; padding: 20px;">
+    <img src="Logo.png" alt="Moden Mixes Logo" style="max-height: 120px;">
     <h1>Moden Mixes</h1>
     <p>Mobile Bartending for Events & Celebrations</p>
-    <div class="certifications" style="text-align: center;">
-  <img src="star-k.png" alt="Star-K Logo">
-  <img src="certified-kosher.png" alt="Certified Kosher Logo">
 
-  <div style="margin-top: 20px;">
-    <button onclick="openContactForm()">Contact Us</button>
-  </div>
-<main>
+    <div class="certifications" style="margin-top: 20px;">
+      <img src="star-k.png" alt="Star-K Logo" style="height: 50px; margin: 5px;">
+      <img src="certified-kosher.png" alt="Certified Kosher Logo" style="height: 50px; margin: 5px;">
+    </div>
+
+    <div style="margin-top: 20px;">
+      <button onclick="openContactForm()" style="
+        padding: 14px 28px;
+        font-size: 18px;
+        font-weight: bold;
+        background: #ffd700;
+        color: #18120a;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+      ">
+        Contact Us
+      </button>
+    </div>
+  </header>
+
+  <main>
     <section class="about-section">
       <div class="section-inner">
         <h2>About Us</h2>
@@ -658,18 +697,19 @@
         </p>
       </div>
     </section>
-  <section class="why-section">
-    <div class="section-inner">
-      <h2>Why Choose Moden Mixes?</h2>
-      <ul>
-        <li>Certified kosher service</li>
-        <li>Experienced, friendly, and certified bartenders</li>
-        <li>Premium ingredients and elegant presentation</li>
-        <li>Stress-free setup and cleanup</li>
-        <li>Flexible packages for any event size</li>
-      </ul>
-    </div>
-  </section>
+
+    <section class="why-section">
+      <div class="section-inner">
+        <h2>Why Choose Moden Mixes?</h2>
+        <ul>
+          <li>Certified kosher service</li>
+          <li>Experienced, friendly, and certified bartenders</li>
+          <li>Premium ingredients and elegant presentation</li>
+          <li>Stress-free setup and cleanup</li>
+          <li>Flexible packages for any event size</li>
+        </ul>
+      </div>
+    </section>
 </main>
 </body>
       </div>
