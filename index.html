@@ -642,12 +642,13 @@
     <img src="Logo.png" alt="Moden Mixes Logo" />
     <h1>Moden Mixes</h1>
     <p>Mobile Bartending for Events & Celebrations</p>
-    <div class="kosher-badge" style="justify-content: center; margin: 0 auto;">
-      <span>Certified Kosher</span>
-      <img src="kosher.png.jpg" class="kosher-logo" alt="Kosher Certified" />
-    </div>
-    <button class="button" id="contactBtn">Contact Us</button>
-  </header>
+    <div class="certifications" style="text-align: center;">
+  <img src="star-k.png" alt="Star-K Logo">
+  <img src="certified-kosher.png" alt="Certified Kosher Logo">
+
+  <div style="margin-top: 20px;">
+    <button onclick="openContactForm()">Contact Us</button>
+  </div>
 <main>
     <section class="about-section">
       <div class="section-inner">
@@ -848,21 +849,47 @@
       </div>
     </section>
   </main>
-  <div class="modal" id="contactModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/mnqepqra" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
+<!-- Contact Form Modal -->
+<div id="contactFormModal" style="
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+  text-align: left;
+">
+  <h2 style="margin-top: 0;">Send Us a Message</h2>
+  <form onsubmit="handleFakeSubmit(event)">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="message">Message</label><br>
+    <textarea id="message" rows="5" required style="width: 100%; padding: 8px;"></textarea><br><br>
+
+    <button type="submit" style="padding: 10px 20px;">Send</button>
+    <button type="button" onclick="closeContactForm()" style="padding: 10px 20px;">Cancel</button>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+" onclick="closeContactForm()"></div>
+
   <footer style="text-align:center; color:#ffe066; font-family:'Playfair Display',serif; padding:28px 0 22px 0; z-index:3; position:relative;">
     &copy; 2025 Moden Mixes. All rights reserved.<br>
     <span style="color:gold;">Gershon Moses &nbsp;|&nbsp; (443) 204-0803</span>
@@ -877,51 +904,50 @@
         <path fill="url(#IGg)" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.7-36.1-92.9S388.7 1.7 353.4 0C317.5-1.7 130.5-1.7 94.6 0 59.3 1.7 27.9 9.9 1.7 36.1S1.7 123.3 0 158.6c-1.7 35.9-1.7 222.9 0 258.8 1.7 35.3 9.9 66.7 36.1 92.9s57.6 34.4 92.9 36.1c35.9 1.7 222.9 1.7 258.8 0 35.3-1.7 66.7-9.9 92.9-36.1s34.4-57.6 36.1-92.9c1.7-35.9 1.7-222.9 0-258.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.6 102.9-9 132.3z"/>
       </svg>
       @moden_mixes
-    </a>
-  </footer>
-  <script>
-    // Starfield
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    let w, h;
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+    <script>
+  // Starfield
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  function drawStars() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < 180; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = Math.random() * 1.5 + 0.3;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.7 + 0.3})`;
+      ctx.shadowColor = '#ffd700';
+      ctx.shadowBlur = 12;
+      ctx.fill();
+      ctx.shadowBlur = 0;
     }
-    window.addEventListener('resize', resize);
-    resize();
-    function drawStars() {
-      ctx.clearRect(0, 0, w, h);
-      for (let i = 0; i < 180; i++) {
-        const x = Math.random() * w;
-        const y = Math.random() * h;
-        const r = Math.random() * 1.5 + 0.3;
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
-        ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.7 + 0.3})`;
-        ctx.shadowColor = '#ffd700';
-        ctx.shadowBlur = 12;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-    }
-    setInterval(drawStars, 120);
+  }
+  setInterval(drawStars, 120);
 
-    // Modal logic
-    const modal = document.getElementById('contactModal');
-    const btn = document.getElementById('contactBtn');
-    const close = document.getElementById('closeModal');
-    btn.onclick = function() {
-      modal.style.display = "flex";
-    }
-    close.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+  // NEW Modal logic
+  function openContactForm() {
+    document.getElementById("contactFormModal").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function closeContactForm() {
+    document.getElementById("contactFormModal").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  function handleFakeSubmit(event) {
+    event.preventDefault();
+    alert("Your message has been sent to modenmixes@gmail.com!");
+    closeContactForm();
+  }
+</script>
 </body>
 </html>
