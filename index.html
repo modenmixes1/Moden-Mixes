@@ -1,309 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moden Mixes | Mobile Bartending</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="Logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Simplified base styling */
     html, body {
       margin: 0;
       padding: 0;
+      min-height: 100vh;
       font-family: 'Open Sans', sans-serif;
+      color: #fff;
       background: #18120a url('https://cdn.pixabay.com/photo/2017/01/06/19/15/abstract-1958937_1280.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
     body::before {
-      content: \"\";
+      content: "";
       position: fixed;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,215,0,0.10) 0%, rgba(0,0,0,0.8) 100%);
-      opacity: 0.7;
+      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,0,0,0.8));
       z-index: 1;
+      pointer-events: none;
+    }
+    #starfield {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 2;
       pointer-events: none;
     }
     header, main, footer {
       position: relative;
       z-index: 3;
-      text-align: center;
     }
     header {
+      text-align: center;
       padding: 56px 20px 30px;
     }
     header img {
       width: 240px;
       height: 240px;
       border-radius: 50%;
-      border: 6px solid gold;
-      background: #222;
       object-fit: contain;
       box-shadow: 0 8px 40px rgba(255,215,0,0.18), 0 2px 16px rgba(0,0,0,0.18);
+      background: #222;
+      border: 6px solid gold;
+      display: block;
       margin: 0 auto 20px;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 54px;
+      margin: 0;
       color: gold;
       letter-spacing: 2.5px;
+      text-shadow: 0 3px 18px #000, 0 1px 0 #ffe066;
       font-variant: small-caps;
       font-weight: 900;
-      text-shadow: 0 3px 18px #000, 0 1px 0 #ffe066;
     }
     header p {
-      font-size: 1.25rem;
+      font-size: 22px;
+      margin: 16px 0 0;
       color: #f5e7b4;
-      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 1px 6px #000;
     }
     .kosher-badge {
       display: inline-block;
-      margin-top: 10px;
-      padding: 6px 18px;
       background: rgba(255,215,0,0.13);
+      color: gold;
       border: 1.5px solid gold;
       border-radius: 18px;
-      color: gold;
+      padding: 6px 18px;
+      font-size: 17px;
+      font-family: 'Montserrat', sans-serif;
       font-weight: bold;
-      font-size: 1rem;
+      letter-spacing: 1.2px;
       box-shadow: 0 1px 8px rgba(255,215,0,0.12);
+      margin-top: 12px;
     }
     .button {
       display: inline-block;
-      margin-top: 34px;
       padding: 16px 36px;
-      font-size: 1.25rem;
+      background: linear-gradient(90deg, #ffe066 0%, #ffd700 60%, #bfa43a 100%);
+      color: #18120a;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 34px;
+      font-size: 22px;
+      box-shadow: 0 2px 18px rgba(255,215,0,0.18), 0 1.5px 10px rgba(0,0,0,0.12);
       font-family: 'Playfair Display', serif;
       letter-spacing: 2px;
-      background: linear-gradient(90deg, #ffe066, #ffd700, #bfa43a);
-      color: #18120a;
-      border: none;
-      border-radius: 12px;
       text-shadow: 0 1px 10px #fff7c2;
       cursor: pointer;
-      box-shadow: 0 2px 18px rgba(255,215,0,0.18);
+      border: none;
       animation: glow 2.5s infinite alternate;
     }
     @keyframes glow {
       0% { box-shadow: 0 0 8px #ffd700; }
       100% { box-shadow: 0 0 24px #ffd700; }
     }
-
     section {
       max-width: 950px;
-      margin: 2rem auto;
+      margin: 0 auto 44px auto;
       background: rgba(32, 24, 10, 0.68);
-      border: 2.5px solid transparent;
       border-radius: 22px;
-      padding: 2rem;
-      border-image: linear-gradient(92deg, #ffe066, #ffd700, #bfa43a) 1;
-      backdrop-filter: blur(2.5px);
       box-shadow: 0 8px 40px rgba(255,215,0,0.10), 0 2px 16px rgba(0,0,0,0.17);
+      border: 2.5px solid transparent;
+      padding: 48px 28px 34px 28px;
+      overflow: hidden;
+      backdrop-filter: blur(2.5px);
+      border-image: linear-gradient(92deg, #ffe066 0%, #ffd700 50%, #bfa43a 100%) 1;
     }
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 38px;
+      margin-bottom: 18px;
       color: gold;
       letter-spacing: 2px;
-      text-shadow: 0 2px 12px #000;
+      text-shadow: 0 2px 12px #000, 0 1px 0 #ffe066;
       font-variant: small-caps;
       font-style: italic;
+      text-align: center;
     }
     h3 {
-      font-family: 'Playfair Display', serif;
       color: #ffe066;
-      font-size: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      margin-top: 28px;
+      margin-bottom: 10px;
       font-style: italic;
-      margin-top: 1.5rem;
     }
     p, li {
-      font-size: 1.1rem;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 20px;
       color: #f5e7b4;
       line-height: 1.8;
+      text-shadow: 0 1px 4px #000;
     }
-    ul, ol {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
+    ul {
+      padding-left: 28px;
     }
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 18px;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
     }
     .gallery-grid img {
       width: 120px;
       height: auto;
+      object-fit: contain;
       border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(255,215,0,0.09);
       border: 1.5px solid #ffe066;
       background: #222;
-      object-fit: cover;
-      box-shadow: 0 2px 10px rgba(255,215,0,0.09);
-    }
-    .insta-btn {
-      display: inline-block;
-      margin: 1.5rem auto;
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(90deg, #f9ce34, #ee2a7b, #6228d7);
-      text-decoration: none;
-      border: 2px solid #ffd700;
-      transition: all 0.3s ease;
-    }
-    .insta-btn:hover {
-      background: linear-gradient(90deg, #ffd700, #ee2a7b, #6228d7);
-      box-shadow: 0 0 16px #ee2a7b;
     }
     footer {
       text-align: center;
-      padding: 2rem;
       color: #ffe066;
       font-family: 'Playfair Display', serif;
+      padding: 28px 0 22px;
     }
-
-    /* Contact Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-    .modal-content {
-      background: #18120aee;
-      border-radius: 18px;
-      padding: 2rem;
-      max-width: 400px;
-      border: 2px solid gold;
-      color: white;
-    }
-    .close {
-      position: absolute;
-      top: 12px; right: 16px;
-      color: #ffe066;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.6rem;
-      margin-bottom: 1rem;
-      background: #2d230e;
-      color: #ffe066;
-      border: 1px solid #ffd700;
-      border-radius: 6px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    button[type=\"submit\"] {
-      width: 100%;
-      padding: 0.75rem;
-      background: linear-gradient(90deg, #ffe066, #ffd700, #bfa43a);
-      border: none;
-      border-radius: 8px;
-      color: #18120a;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
     @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      section { margin: 1rem; }
-      .gallery-grid { flex-direction: column; align-items: center; }
-      .gallery-grid img { width: 90%; }
+      header h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+      section { margin: 0 6px 24px 6px; padding: 24px 16px; }
+      .button { font-size: 16px; padding: 10px 18px; }
+      .gallery-grid img { width: 44vw; min-width: 100px; }
     }
   </style>
 </head>
 <body>
-  <canvas id=\"starfield\"></canvas>
+  <canvas id="starfield"></canvas>
   <header>
-    <img src=\"Logo.png\" alt=\"Moden Mixes Logo\">
+    <img src="Logo.png" alt="Moden Mixes Logo" />
     <h1>Moden Mixes</h1>
     <p>Mobile Bartending for Events & Celebrations</p>
-    <div class=\"kosher-badge\">Certified Kosher</div>
-    <button class=\"button\" id=\"contactBtn\">Contact Us</button>
-  </header>
+    <div class="kosher-badge">Certified Kosher</div>
+    <br>
+    <button class="button" id="contactBtn">Contact Us</button>
+  </header>  <main>
+    <section>
+      <h2>About Us</h2>
+      <p><strong>Moden Mixes</strong> is Baltimore's first certified kosher premier mobile bartending service founded by Gershon Moses. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.</p>
+      <p>Our team believes every event deserves a signature experience. From intimate gatherings to grand weddings, we deliver excellence, creativity, and hospitality.</p>
+    </section><section>
+  <h2>Why Choose Moden Mixes?</h2>
+  <ul>
+    <li>Certified kosher service</li>
+    <li>Experienced, friendly, and certified bartenders</li>
+    <li>Premium ingredients and elegant presentation</li>
+    <li>Stress-free setup and cleanup</li>
+    <li>Flexible packages for any event size</li>
+  </ul>
+</section>
 
-  <main>
-    <section><h2>About Us</h2><p><strong>Moden Mixes</strong> is Baltimore's first certified kosher premier mobile bartending service founded by Gershon Moses. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.</p></section>
+<section>
+  <h2>Our Services</h2>
+  <ul>
+    <li><strong>Weddings & all other Simchas:</strong> Celebrate with curated cocktails and impeccable service for your special day.</li>
+    <li><strong>Corporate Events:</strong> Impress clients and colleagues with a stylish bar and professional staff.</li>
+    <li><strong>Private Parties:</strong> Birthdays, anniversaries, Bar/Bat Mitzvahs - we handle the drinks, you enjoy the party!</li>
+    <li><strong>Mocktails & Family Events:</strong> Delicious non-alcoholic options for all ages and occasions.</li>
+  </ul>
+</section>
 
-    <section><h2>Why Choose Moden Mixes?</h2><ul><li>Certified kosher service</li><li>Experienced, friendly bartenders</li><li>Premium ingredients</li><li>Setup and cleanup included</li><li>Flexible packages for all event sizes</li></ul></section>
+<section>
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/14120fe5-0269-4272-94b6-421ba4cb8233/1000203295.jpg" alt="Bartender at Work">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/fb7099c0-2c35-41c4-a40d-f67c7d0e5744/1000203297.jpg" alt="Cocktails on Bar">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/4b697449-e5cc-4277-9319-d840b285ea00/1000203311.jpg" alt="Lime Cocktail">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/6e92114d-63e0-4e7c-b7a7-3450745fb700/1000203313.jpg" alt="Old Fashioned">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/c243d31e-ea2a-4e3b-830d-6a21c67333c7/1000203315.jpg" alt="Pink Cocktails">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/cc524aea-32c5-4b89-afb3-41b7a11a2a18/1000203317.jpg" alt="Orange Cherry Cocktails">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/5407e2b9-afbb-4f3f-8916-ded0f7418ee0/long-island-iced-tea-1675716374.jpg" alt="Long Island Iced Tea">
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/8d25757b-f7c8-453d-9d74-bcf2fbbc6ee7/TEQUILA_SUNRISE_RC.jpg" alt="Tequila Sunrise">
+  </div>
+  <p style="margin-top:24px; text-align:center;">
+    <em>See more on our <a href="https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA==" target="_blank" style="color:gold;">Instagram</a>!</em>
+  </p>
+</section>
 
-    <section><h2>Our Services</h2><ul><li><strong>Weddings:</strong> Curated cocktails for your simcha.</li><li><strong>Corporate Events:</strong> Stylish service that impresses.</li><li><strong>Private Parties:</strong> Birthdays, Mitzvahs, and more!</li><li><strong>Mocktails:</strong> Creative non-alcoholic drinks for all ages.</li></ul></section>
+<section>
+  <h2>Testimonials</h2>
+  <p>“Moden Mixes made our wedding magical – delicious cocktails and top-notch service!”<br><strong>- Yaakov & Rivka</strong></p>
+  <p>“Our guests loved the creative drinks and friendly staff. Highly recommend!”<br><strong>- Shira S.</strong></p>
+  <p>“Gershon and his team were so professional and fun. The drinks were a huge hit at our corporate event!”<br><strong>- Leah R.</strong></p>
+  <p>“The mocktails were just as impressive as the cocktails. Everyone had something to enjoy!”<br><strong>- Daniel M.</strong></p>
+  <p>“Moden Mixes took care of everything. We didn’t have to worry about a thing, and our guests raved about the bar all night.”<br><strong>- Sarah K.</strong></p>
+  <p>“Best bartending service we’ve ever had! The attention to detail and presentation was outstanding.”<br><strong>- Moshe & Miriam</strong></p>
+</section>
 
-    <section><h2>Gallery</h2>
-      <div class=\"gallery-grid\">
-        <img src=\"https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/14120fe5-0269-4272-94b6-421ba4cb8233/1000203295.jpg\" alt=\"Bartender\">
-        <img src=\"https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/fb7099c0-2c35-41c4-a40d-f67c7d0e5744/1000203297.jpg\" alt=\"Cocktails\">
-        <img src=\"https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/4b697449-e5cc-4277-9319-d840b285ea00/1000203311.jpg\" alt=\"Lime Cocktail\">
-        <img src=\"https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/6e92114d-63e0-4e7c-b7a7-3450745fb700/1000203313.jpg\" alt=\"Old Fashioned\">
-      </div>
-      <a class=\"insta-btn\" href=\"https://www.instagram.com/moden_mixes\" target=\"_blank\">@moden_mixes on Instagram</a>
-    </section>
+<section>
+  <h2>FAQs</h2>
+  <h3>What areas do you serve?</h3>
+  <p>We serve the greater metropolitan area and beyond. Contact us for special requests!</p>
+  <h3>Do you provide the alcohol?</h3>
+  <p>We can provide a shopping list or work with your venue’s policies.</p>
+  <h3>Are you certified kosher?</h3>
+  <p>Yes! We are fully certified kosher and happy to accommodate all requirements.</p>
+  <h3>How do I book?</h3>
+  <p>Click "Contact Us" above, DM us on Instagram, or email <a href="mailto:modenmixes@gmail.com" style="color:gold;">modenmixes@gmail.com</a>.</p>
+</section>
 
-    <section><h2>Testimonials</h2><p>“Moden Mixes made our wedding magical!” – Yaakov & Rivka</p><p>“Creative drinks and friendly staff.” – Shira S.</p></section>
-
-    <section><h2>FAQs</h2><h3>What areas do you serve?</h3><p>Greater Baltimore and beyond — just ask!</p><h3>Do you provide alcohol?</h3><p>We provide a shopping list or collaborate with venues.</p><h3>Are you kosher certified?</h3><p>Yes! Fully certified kosher service.</p><h3>How do I book?</h3><p>Click \"Contact Us\" or email <a href=\"mailto:modenmixes@gmail.com\">modenmixes@gmail.com</a></p></section>
-  </main>
-
-  <div class=\"modal\" id=\"contactModal\">
-    <div class=\"modal-content\">
-      <span class=\"close\" id=\"closeModal\">&times;</span>
+  </main>  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
       <h2>Contact Us</h2>
-      <form action=\"https://formspree.io/f/mnqepqra\" method=\"POST\">
-        <label for=\"name\">Name:</label>
-        <input type=\"text\" name=\"name\" required>
-        <label for=\"email\">Email:</label>
-        <input type=\"email\" name=\"email\" required>
-        <label for=\"message\">Message:</label>
-        <textarea name=\"message\" rows=\"4\" required></textarea>
-        <button type=\"submit\">Send</button>
+      <form action="https://formspree.io/f/mnqepqra" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea name="message" rows="4" required></textarea>
+        <button type="submit">Send</button>
       </form>
     </div>
-  </div>
-
-  <footer>
+  </div>  <footer>
     &copy; 2025 Moden Mixes. All rights reserved.<br>
-    Gershon Moses | (443) 204-0803
-  </footer>
-
-  <script>
+    <span>Gershon Moses | (443) 204-0803</span>
+  </footer>  <script>
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
-    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resize); resize();
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
     function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, w, h);
       for (let i = 0; i < 180; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
+        const x = Math.random() * w;
+        const y = Math.random() * h;
         const r = Math.random() * 1.5 + 0.3;
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 2 * Math.PI);
         ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.7 + 0.3})`;
         ctx.shadowColor = '#ffd700';
         ctx.shadowBlur = 12;
-        ctx.fill(); ctx.shadowBlur = 0;
+        ctx.fill();
+        ctx.shadowBlur = 0;
       }
     }
     setInterval(drawStars, 120);
+
     const modal = document.getElementById('contactModal');
     const btn = document.getElementById('contactBtn');
-    const close = document.getElementById('closeModal');
-    btn.onclick = () => modal.style.display = 'flex';
-    close.onclick = () => modal.style.display = 'none';
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
-  </script>
-</body>
-</html>
+    const close = document.getElement
