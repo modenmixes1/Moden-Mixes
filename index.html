@@ -83,21 +83,24 @@
       text-shadow: 0 1px 6px #000;
     }
     .kosher-badge {
-      display: inline-block;
-      background: rgba(255,215,0,0.13);
-      color: gold;
-      border: 1.5px solid gold;
-      border-radius: 18px;
-      padding: 6px 18px 6px 16px;
-      font-size: 17px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      margin-top: 10px;
-      letter-spacing: 1.2px;
-      box-shadow: 0 1px 8px rgba(255,215,0,0.12);
-      position: relative;
-      top: 6px;
-    }
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.2em; /* Adjust to match your site's header size */
+  font-weight: bold;
+  background: rgba(255,215,0,0.10);
+  color: #bfa100;
+  border: 1.5px solid #bfa100;
+  border-radius: 18px;
+  padding: 6px 18px;
+  margin-top: 10px;
+}
+.kosher-badge .kosher-logo {
+  height: 1.2em; /* Matches font size */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
     .button {
       display: inline-block;
       padding: 16px 36px;
@@ -328,13 +331,9 @@
   <h1>Moden Mixes</h1>
   <p>Mobile Bartending for Events & Celebrations</p>
   <div class="kosher-badge">
-    <span class="kosher-text">Certified Kosher</span>
-    <img 
-      src="https://pplx-res.cloudinary.com/image/private/user_uploads/69031884/579c6256-3cf1-43bc-ae06-c4cd115d4d3d/Star-K_logo.jpg" 
-      alt="Kosher Certification" 
-      class="kosher-logo"
-    />
-  </div>
+  <span>Certified Kosher</span>
+  <img src="kosher.png" alt="Kosher Certified" class="kosher-logo">
+</div>
   <br>
   <button class="button" id="contactBtn">Contact Us</button>
   <main>
