@@ -534,34 +534,27 @@
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h2>Contact Us</h2>    
-<form action=https://formspree.io/f/mpwdkzvy method="POST" id="contactForm">
-  <input type="email" name="email" required placeholder="Your email">
-  <textarea name="message" required placeholder="Your message"></textarea>
-  <button type="submit">Send</button>
-</form>
-<div id="thankYouMessage" style="display:none; color:green; font-weight:bold;">
-  Thank you!
-</div>
-
-
-</script>
+      <form action="https://formspree.io/f/mpwdkzvy" method="POST" id="contactForm">
+        <input type="email" name="email" required placeholder="Your email">
+        <textarea name="message" required placeholder="Your message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="thankYouMessage" style="display:none; color:green; font-weight:bold;">
+        Thank you!
+      </div>
+    </div>
   </div>
+
   <footer style="text-align:center; color:#ffe066; font-family:'Playfair Display',serif; padding:28px 0 22px 0; z-index:3; position:relative;">
     &copy; 2025 Moden Mixes. All rights reserved.<br>
     <span style="color:gold;">Gershon Moses &nbsp;|&nbsp; (443) 204-0803</span>
     <br>
     <a class="insta-btn" href="https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA==" target="_blank">
-      <svg width="22" height="22" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-        <linearGradient id="IGg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#f9ce34"/>
-          <stop offset="50%" stop-color="#ee2a7b"/>
-          <stop offset="100%" stop-color="#6228d7"/>
-        </linearGradient>
-        <path fill="url(#IGg)" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.7-36.1-92.9S388.7 1.7 353.4 0C317.5-1.7 130.5-1.7 94.6 0 59.3 1.7 27.9 9.9 1.7 36.1S1.7 123.3 0 158.6c-1.7 35.9-1.7 222.9 0 258.8 1.7 35.3 9.9 66.7 36.1 92.9s57.6 34.4 92.9 36.1c35.9 1.7 222.9 1.7 258.8 0 35.3-1.7 66.7-9.9 92.9-36.1s34.4-57.6 36.1-92.9c1.7-35.9 1.7-222.9 0-258.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.6 102.9-9 132.3z"/>
-      </svg>
+      <!-- Instagram SVG here -->
       @moden_mixes
     </a>
   </footer>
+
   <script>
     // Starfield
     const canvas = document.getElementById('starfield');
@@ -590,40 +583,39 @@
     }
     setInterval(drawStars, 120);
 
-   <script>
-  // Modal logic
-  const modal = document.getElementById('contactModal');
-  const btn = document.getElementById('contactBtn');
-  const close = document.getElementById('closeModal');
-  btn.onclick = function() {
-    modal.style.display = "flex";
-  }
-  close.onclick = function() {
-    modal.style.display = "none";
-  }
-  window.onclick = function(event) {
-    if (event.target == modal) {
+    // Modal logic
+    const modal = document.getElementById('contactModal');
+    const btn = document.getElementById('contactBtn');
+    const close = document.getElementById('closeModal');
+    btn.onclick = function() {
+      modal.style.display = "flex";
+    }
+    close.onclick = function() {
       modal.style.display = "none";
     }
-  }
-
-  // Form submission logic
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      form.style.display = 'none';
-      document.getElementById('thankYouMessage').style.display = 'block';
-    } else {
-      alert('Oops! There was a problem submitting your form.');
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
-  });
-</script>
+
+    // Form submission logic
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+      } else {
+        alert('Oops! There was a problem submitting your form.');
+      }
+    });
+  </script>
 </body>
 </html>
