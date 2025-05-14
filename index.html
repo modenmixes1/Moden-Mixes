@@ -329,6 +329,7 @@
     <div class="kosher-badge">Certified Kosher</div>
     <br>
     <button class="button" id="contactBtn">Contact Us</button>
+
   </header>
   <main>
     <section class="about-section">
@@ -532,8 +533,7 @@
   <div class="modal" id="contactModal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
-      <h2>Contact Us</h2>
-      
+      <h2>Contact Us</h2>    
 <form action=https://formspree.io/f/mpwdkzvy method="POST" id="contactForm">
   <input type="email" name="email" required placeholder="Your email">
   <textarea name="message" required placeholder="Your message"></textarea>
@@ -590,37 +590,40 @@
     }
     setInterval(drawStars, 120);
 
-    // Modal logic
-    const modal = document.getElementById('contactModal');
-    const btn = document.getElementById('contactBtn');
-    const close = document.getElementById('closeModal');
-    btn.onclick = function() {
-      modal.style.display = "flex";
-    }
-    close.onclick = function() {
+   <script>
+  // Modal logic
+  const modal = document.getElementById('contactModal');
+  const btn = document.getElementById('contactBtn');
+  const close = document.getElementById('closeModal');
+  btn.onclick = function() {
+    modal.style.display = "flex";
+  }
+  close.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
       modal.style.display = "none";
     }
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
-  if (response.ok) {
-    form.style.display = 'none';
-    document.getElementById('thankYouMessage').style.display = 'block';
-  } else {
-    alert('Oops! There was a problem submitting your form.');
   }
-});
+
+  // Form submission logic
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    } else {
+      alert('Oops! There was a problem submitting your form.');
+    }
+  });
+</script>
 </body>
 </html>
