@@ -197,15 +197,15 @@
     }
     .gallery-section .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
       justify-items: center;
       align-items: center;
       margin-top: 18px;
     }
     .gallery-section .gallery-grid img {
-      width: 120px;
-      height: 80px;
+      width: 200px;
+      height: 133px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(255,215,0,0.09);
@@ -231,12 +231,12 @@
       .section-inner { padding: 18px 7px 16px 7px; }
       .gallery-section .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        gap: 10px;
       }
       .gallery-section .gallery-grid img {
-        max-width: 44vw;
-        min-width: 100px;
-        height: 60px;
+        max-width: 45vw;
+        min-width: 140px;
+        height: 100px;
       }
     }
     /* Modal styles */
@@ -531,4 +531,4 @@
       ctx.clearRect(0, 0, w, h);
       for (let i = 0; i < 100; i++) {
         const x = Math.random() * w;
-        const y = Math.random() * h;
+        const y = Math.random() *
