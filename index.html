@@ -554,4 +554,158 @@
         <h3>What areas do you serve?</h3>
         <p>We serve the greater metropolitan area and beyond. Contact us for special requests!</p>
         <h3>Do you provide the alcohol?</h3>
-        <p>Unfortun
+        <p>Unfortunately, due to Maryland’s strict liquor laws, we cannot legally provide alcohol for our customers. However, we work closely with a local liquor store that can deliver directly to your party.</p>
+        <h3>Are you certified kosher?</h3>
+        <p>Yes! We are fully certified kosher and happy to accommodate all requirements.</p>
+        <h3>How do I book?</h3>
+        <p>Click "Contact Us" above, DM us on Instagram, or email <a href="mailto:modenmixes@gmail.com" style="color:gold;">modenmixes@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close" id="contactClose" aria-label="Close contact form">×</span>
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/mpwdkzvy" method="POST" id="contactForm">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your email">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required placeholder="Your message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="thankYouMessage">Thank you!</div>
+    </div>
+  </div>
+  <div class="lightbox" id="lightboxModal">
+    <div class="lightbox-content">
+      <span class="lightbox-close" aria-label="Close image lightbox">×</span>
+      <img id="lightboxImage" src="" alt="Enlarged gallery image">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+  <footer>
+    © 2025 Moden Mixes. All rights reserved.<br>
+    <span id="contactInfo">Gershon Moses | (443) 204-0803</span><br>
+    <a class="insta-btn" href="https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA==" target="_blank" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm4-12.5c0-.828-.672-1.5-1.5-1.5S13 6.672 13 7.5s.672 1.5 1.5 1.5S16 8.328 16 7.5zm-4 1.5c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z" fill="#fff"/>
+      </svg>
+      @moden_mixes
+    </a>
+  </footer>
+
+  <script>
+    // Contact Info
+    const contactInfo = {
+      phone: '(443) 204-0803',
+      email: 'modenmixes@gmail.com',
+      instagram: 'https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA=='
+    };
+    document.getElementById('contactInfo').innerHTML = `Gershon Moses | ${contactInfo.phone}`;
+
+    // Starfield
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    function drawStars() {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < 100; i++) {
+        const x = Math.random() * w;
+        const y = Math.random() * h;
+        const r = Math.random() * 1.5 + 0.3;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.7 + 0.3})`;
+        ctx.shadowColor = '#ffd700';
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+    setInterval(drawStars, 200);
+
+    // Contact Modal logic
+    const contactModal = document.getElementById('contactModal');
+    const contactBtn = document.getElementById('contactBtn');
+    const contactClose = document.getElementById('contactClose');
+
+    contactBtn.addEventListener('click', function() {
+      contactModal.style.display = 'flex';
+      document.getElementById('contactForm').reset();
+      document.getElementById('contactForm').style.display = 'block';
+      document.getElementById('thankYouMessage').style.display = 'none';
+    });
+
+    contactClose.addEventListener('click', function() {
+      contactModal.style.display = 'none';
+    });
+
+    // Contact Form submission logic
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('thankYouMessage').style.display = 'block';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        alert('Oops! There was a problem submitting your form. Please try again or email ' + contactInfo.email + '.');
+      }
+    });
+
+    // Lightbox Modal logic
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    function openLightbox(src, alt) {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightboxCaption.textContent = alt;
+      lightboxModal.style.display = 'flex';
+    }
+
+    lightboxClose.addEventListener('click', function() {
+      lightboxModal.style.display = 'none';
+    });
+
+    // Close modals on click outside
+    window.addEventListener('click', function(event) {
+      if (event.target === contactModal) {
+        contactModal.style.display = 'none';
+      }
+      if (event.target === lightboxModal) {
+        lightboxModal.style.display = 'none';
+      }
+    });
+
+    // Close modals on Esc key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        if (contactModal.style.display === 'flex') {
+          contactModal.style.display = 'none';
+        }
+        if (lightboxModal.style.display === 'flex') {
+          lightboxModal.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
