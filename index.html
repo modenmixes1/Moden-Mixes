@@ -3,17 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Moden Mixes - Baltimore's premier kosher mobile bartending service for weddings, corporate events, and private parties." />
-  <meta name="keywords" content="kosher bartending, mobile bartending, Baltimore events, wedding cocktails, corporate events" />
-  <meta property="og:title" content="Moden Mixes | Mobile Bartending" />
+  <meta name="description" content="Moden Mixes: Baltimore's certified kosher mobile bartending service for weddings, corporate events, and private parties. Book now!" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Moden Mixes | Kosher Mobile Bartending in Baltimore, MD" />
   <meta property="og:description" content="Baltimore's first certified kosher mobile bartending service, offering premium cocktails and flawless service for all events." />
-  <meta property="og:image" content="Logo.png" />
+  <meta property="og:image" content="https://www.modenmixes.com/Logo.webp" />
   <meta property="og:url" content="https://www.modenmixes.com" />
+  <link rel="canonical" href="https://www.modenmixes.com" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="preload" href="https://cdn.pixabay.com/photo/2017/01/06/19/15/abstract-1958937_1280.jpg" as="image" />
-  <link rel="preload" href="Logo.png" as="image" />
-  <title>Moden Mixes | Mobile Bartending</title>
+  <link rel="preload" href="Logo.webp" as="image" />
+  <title>Moden Mixes | Kosher Mobile Bartending in Baltimore, MD</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Moden Mixes",
+    "image": "https://www.modenmixes.com/Logo.webp",
+    "telephone": "(443) 204-0803",
+    "email": "modenmixes@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Baltimore",
+      "addressRegion": "MD",
+      "postalCode": "21215",
+      "addressCountry": "US"
+    },
+    "url": "https://www.modenmixes.com",
+    "description": "Baltimore's first certified kosher mobile bartending service, offering premium cocktails for weddings, corporate events, and private parties.",
+    "sameAs": [
+      "https://www.instagram.com/moden_mixes"
+    ],
+    "openingHours": "Mo-Su 09:00-21:00",
+    "priceRange": "$$",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.3527",
+      "longitude": "-76.6597"
+    }
+  }
+  </script>
   <style>
     html, body {
       margin: 0;
@@ -446,27 +475,42 @@
 </head>
 <body>
   <canvas id="starfield"></canvas>
-  <header>
-    <img src="Logo.png" alt="Moden Mixes Logo" loading="lazy" />
+  <header role="banner">
+    <img src="Logo.webp" alt="Moden Mixes Logo" loading="lazy" />
     <h1>Moden Mixes</h1>
     <p>Mobile Bartending for Events & Celebrations</p>
     <div class="kosher-badge">Certified Kosher</div>
-    <br>
-    <button class="button" id="contactBtn">Contact Us</button>
+    <nav aria-label="Main navigation">
+      <ul style="list-style: none; padding: 0; margin: 20px 0;">
+        <li style="display: inline; margin: 0 10px;">
+          <a href="#about-section" style="color: gold; text-decoration: none; font-family: 'Montserrat', sans-serif;">About</a>
+        </li>
+        <li style="display: inline; margin: 0 10px;">
+          <a href="#services-section" style="color: gold; text-decoration: none; font-family: 'Montserrat', sans-serif;">Services</a>
+        </li>
+        <li style="display: inline; margin: 0 10px;">
+          <a href="#gallery-section" style="color: gold; text-decoration: none; font-family: 'Montserrat', sans-serif;">Gallery</a>
+        </li>
+        <li style="display: inline; margin: 0 10px;">
+          <a href="#faqs-section" style="color: gold; text-decoration: none; font-family: 'Montserrat', sans-serif;">FAQs</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="button" id="contactBtn" aria-label="Open contact form">Contact Us</button>
   </header>
-  <main>
-    <section class="about-section">
+  <main role="main">
+    <section class="about-section" id="about-section">
       <div class="section-inner">
         <h2>About Us</h2>
         <p>
-          <strong>Moden Mixes</strong> is Baltimore's first certified kosher premier mobile bartending service founded by Gershon Moses. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.
+          <strong>Moden Mixes</strong> is Baltimore's first certified kosher mobile bartending service, founded by Gershon Moses in Baltimore, MD. We bring sophistication and sparkle to your events with creative cocktails and flawless service. Certified kosher, we combine tradition with luxury to create unforgettable celebrations.
         </p>
         <p>
-          Our team believes every event deserves a signature experience. From intimate gatherings to grand weddings, we deliver excellence, creativity, and hospitality.
+          Our team believes every event deserves a signature experience. From intimate gatherings to grand weddings, we deliver excellence, creativity, and hospitality in Baltimore and beyond.
         </p>
       </div>
     </section>
-    <section class="why-section">
+    <section class="why-section" id="why-section">
       <div class="section-inner">
         <h2>Why Choose Moden Mixes?</h2>
         <ul>
@@ -478,7 +522,7 @@
         </ul>
       </div>
     </section>
-    <section class="services-section">
+    <section class="services-section" id="services-section">
       <div class="section-inner">
         <h2>Our Services</h2>
         <ul>
@@ -489,7 +533,7 @@
         </ul>
       </div>
     </section>
-    <section class="how-it-works-section">
+    <section class="how-it-works-section" id="how-it-works-section">
       <div class="section-inner">
         <h2>How It Works</h2>
         <ol style="color:#fff7c2; font-size:20px; font-family:'Montserrat',sans-serif; margin-left:20px;">
@@ -500,7 +544,7 @@
         </ol>
       </div>
     </section>
-    <section class="testimonials-section">
+    <section class="testimonials-section" id="testimonials-section">
       <div class="section-inner">
         <h2>Testimonials</h2>
         <p>
@@ -529,30 +573,30 @@
         </p>
       </div>
     </section>
-    <section class="gallery-section">
+    <section class="gallery-section" id="gallery-section">
       <div class="section-inner">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/14120fe5-0269-4272-94b6-421ba4cb8233/1000203295.jpg" alt="Bartender preparing a cocktail" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View bartender preparing a cocktail">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/fb7099c0-2c35-41c4-a40d-f67c7d0e5744/1000203297.jpg" alt="Cocktails displayed on bar" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View cocktails displayed on bar">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/4b697449-e5cc-4277-9319-d840b285ea00/1000203311.jpg" alt="Lime cocktail" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View lime cocktail">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/6e92114d-63e0-4e7c-b7a7-3450745fb700/1000203313.jpg" alt="Old Fashioned cocktail" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Old Fashioned cocktail">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/c243d31e-ea2a-4e3b-830d-6a21c67333c7/1000203315.jpg" alt="Pink cocktails" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View pink cocktails">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/cc524aea-32c5-4b89-afb3-41b7a11a2a18/1000203317.jpg" alt="Orange cherry cocktails" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View orange cherry cocktails">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/5407e2b9-afbb-4f3f-8916-ded0f7418ee0/long-island-iced-tea-1675716374.jpg" alt="Long Island Iced Tea" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Long Island Iced Tea">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/8d25757b-f7c8-453d-9d74-bcf2fbbc6ee7/TEQUILA_SUNRISE_RC.jpg" alt="Tequila Sunrise" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Tequila Sunrise">
-          <img src="https://pplx-res.cloudinary.com/image/upload/v1747664739/user_uploads/69031884/e70d989b-fb4b-466b-b4fe-d553d946a331/1000205523.jpg" alt="Drink options collage" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View drink options collage">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/14120fe5-0269-4272-94b6-421ba4cb8233/1000203295.jpg" alt="Moden Mixes bartender preparing a kosher cocktail in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View bartender preparing a cocktail">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/fb7099c0-2c35-41c4-a40d-f67c7d0e5744/1000203297.jpg" alt="Moden Mixes cocktails displayed on bar in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View cocktails displayed on bar">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/4b697449-e5cc-4277-9319-d840b285ea00/1000203311.jpg" alt="Moden Mixes lime cocktail in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View lime cocktail">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/6e92114d-63e0-4e7c-b7a7-3450745fb700/1000203313.jpg" alt="Moden Mixes Old Fashioned cocktail in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Old Fashioned cocktail">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/c243d31e-ea2a-4e3b-830d-6a21c67333c7/1000203315.jpg" alt="Moden Mixes pink cocktails in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View pink cocktails">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747070861/user_uploads/69031884/cc524aea-32c5-4b89-afb3-41b7a11a2a18/1000203317.jpg" alt="Moden Mixes orange cherry cocktails in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View orange cherry cocktails">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/5407e2b9-afbb-4f3f-8916-ded0f7418ee0/long-island-iced-tea-1675716374.jpg" alt="Moden Mixes Long Island Iced Tea in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Long Island Iced Tea">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747099437/user_uploads/69031884/8d25757b-f7c8-453d-9d74-bcf2fbbc6ee7/TEQUILA_SUNRISE_RC.jpg" alt="Moden Mixes Tequila Sunrise in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View Tequila Sunrise">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1747664739/user_uploads/69031884/e70d989b-fb4b-466b-b4fe-d553d946a331/1000205523.jpg" alt="Moden Mixes drink options collage in Baltimore" loading="lazy" onclick="openLightbox(this.src, this.alt)" aria-label="View drink options collage">
         </div>
         <p>
           <em>See more on our <a href="https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA==" target="_blank" rel="noopener" style="color:gold;">Instagram</a>!</em>
         </p>
       </div>
     </section>
-    <section class="faqs-section">
+    <section class="faqs-section" id="faqs-section">
       <div class="section-inner">
         <h2>FAQs</h2>
         <h3>What areas do you serve?</h3>
-        <p>We serve the greater metropolitan area and beyond. Contact us for special requests!</p>
+        <p>We serve Baltimore, Owings Mills, Pikesville, and the greater Maryland area. Contact us for special requests!</p>
         <h3>Do you provide the alcohol?</h3>
         <p>Unfortunately, due to Maryland’s strict liquor laws, we cannot legally provide alcohol for our customers. However, we work closely with a local liquor store that can deliver directly to your party.</p>
         <h3>Are you certified kosher?</h3>
@@ -583,9 +627,9 @@
       <p id="lightboxCaption" class="lightbox-caption"></p>
     </div>
   </div>
-  <footer>
+  <footer role="contentinfo">
     © 2025 Moden Mixes. All rights reserved.<br>
-    <span id="contactInfo">Gershon Moses | (443) 204-0803</span><br>
+    <span id="contactInfo">Gershon Moses | (443) 204-0803 | Baltimore, MD 21215</span><br>
     <a class="insta-btn" href="https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA==" target="_blank" rel="noopener">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm4-12.5c0-.828-.672-1.5-1.5-1.5S13 6.672 13 7.5s.672 1.5 1.5 1.5S16 8.328 16 7.5zm-4 1.5c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z" fill="#fff"/>
@@ -601,7 +645,7 @@
       email: 'modenmixes@gmail.com',
       instagram: 'https://www.instagram.com/moden_mixes?igsh=MTZzczA0eHB6NjFnOA=='
     };
-    document.getElementById('contactInfo').innerHTML = `Gershon Moses | ${contactInfo.phone}`;
+    document.getElementById('contactInfo').innerHTML = `Gershon Moses | ${contactInfo.phone} | Baltimore, MD 21215`;
 
     // Starfield
     const canvas = document.getElementById('starfield');
